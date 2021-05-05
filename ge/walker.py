@@ -26,13 +26,13 @@ class RandomWalker:
 
     def deepwalk_walk(self, walk_length, start_node):
 
-        walk = [start_node]
+        walk = [str(start_node)]
 
         while len(walk) < walk_length:
-            cur = walk[-1]
+            cur = int(walk[-1])
             cur_nbrs = list(self.G.neighbors(cur))
             if len(cur_nbrs) > 0:
-                walk.append(random.choice(cur_nbrs))
+                walk.append(str(random.choice(cur_nbrs)))
             else:
                 break
         return walk

@@ -59,6 +59,7 @@ class DeepWalk:
 
         self._embeddings = {}
         for word in self.graph.nodes():
+            word = str(word)
             self._embeddings[word] = self.w2v_model.wv[word]
 
         return self._embeddings
